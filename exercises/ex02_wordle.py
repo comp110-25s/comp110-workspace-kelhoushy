@@ -19,9 +19,9 @@ def contains_char(word: str, character: str) -> bool:
 
 def emojified(guess: str, secret: str) -> str:
     """A function that displays colored boxes to indicate guess accuracy"""
-    WHITE_BOX: str = "\U00002B1C"
-    GREEN_BOX: str = "\U0001F7E9"
-    YELLOW_BOX: str = "\U0001F7E8"
+    white_box: str = "\U00002B1C"
+    green_box: str = "\U0001F7E9"
+    yellow_box: str = "\U0001F7E8"
     # Assigning variables for boxes for later.
     assert len(guess) == len(secret), "Guess must be same length as secret"
     index: int = 0
@@ -29,13 +29,13 @@ def emojified(guess: str, secret: str) -> str:
     while index < len(secret):
         if contains_char(secret, guess[index]) is True:
             if secret[index] == guess[index]:
-                boxes = boxes + GREEN_BOX
+                boxes = boxes + green_box
                 # Adds green box if letter matches between guess and secret.
             else:
-                boxes = boxes + YELLOW_BOX
+                boxes = boxes + yellow_box
                 # Adds yellow box if letter is in both words but wrong space.
         else:
-            boxes = boxes + WHITE_BOX
+            boxes = boxes + white_box
             # White box if letter doesn't exist in both words.
         index += 1
     print(boxes)
@@ -58,21 +58,21 @@ def main(secret: str) -> None:
     """The entrypoint of the program and main game loop."""
     i: int = 0
     total_turns: int = 6
-    while i <= total_turns:
-        print(f"=== Turn {i}/{total_turns} ===")
+    while i <= total_turns - 1:
+        print(f"=== Turn {i+1}/{total_turns} ===")
         # Prints turn.
         guess = input_guess(len(secret))
         # Establish variable for return value of prompt.
         emojified(guess, secret)
         # Calls emojified using return value of input_guess.
         if guess == secret:
-            print(f"You won in {i}/{total_turns} turns!")
+            print(f"You won in {i+1}/{total_turns} turns!")
             # Victory message.
             return
         else:
             i += 1
             # Iterates to next turn.
-        if i > total_turns:
+        if i == total_turns:
             print("X/6 - Sorry, try again tomorrow!")
             # Losing message.
             return
