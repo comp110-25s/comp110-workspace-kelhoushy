@@ -6,7 +6,7 @@ __author__: str = "730482808"
 
 def main_planner(guests: int):
     """Prints number of teas, treats, and expected cost of the tea party"""
-    print("A Cosy Tea Party for " + str(guests) + " People!")
+    print("A Cozy Tea Party for " + str(guests) + " People!")
     print("Tea Bags: " + str(tea_bags(people=guests)))
     print("Treats: " + str(treats(people=guests)))
     print(
