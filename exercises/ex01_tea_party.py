@@ -1,5 +1,4 @@
-"""Program to determine number of treats, tea bags, and expected cost of a tea party 
-based on an inputted number of guests"""
+"""Program to determine number of treats, tea bags, and expected cost of a tea party based on an inputted number of guests"""
 
 __author__: str = "730482808"
 
