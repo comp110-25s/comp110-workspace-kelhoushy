@@ -1,0 +1,37 @@
+SECRET=str: ("Cool")
+
+Def guess_secret(word: str, secret: str, idx: int = 0) -> Bool:
+	If len(word) != len(secret)
+		Print(“Words are different lengths.”)
+		Return False
+	Else 
+		If word[idx] != secret[idx]
+			Print(f “{word[0]} is not the same as the secret word’s first letter)
+			Return guess_secret()
+		Else 
+            print(f"{word[idx]} is at index {idx} for both words! Checking next letter...")
+            idx=idx+1
+			If word[idx] != secret[idx]
+				Print(f “{word[idx]} is not the same as the secret word’s first letter)
+				Return False
+					Else
+                        print(f"{word[idx]} is at index {idx} for both words! Checking next letter...")
+                        idx=idx+1
+						Print(“You guessed the secret word!”)
+					Return True
+
+guess_secret(word: input("What is your guess for the secret word"), secret=SECRET)
+
+
+
+if idx<len(word):your
+    if word[idx] != secret[idx]:
+        print(f"{word[idx]} isn't the secret word's next letter.")
+        return False
+    else:
+        print(
+            f"{word[idx]} is at index {idx} for both words! Checking next letters..."
+        )
+        return guess_secret(word=word, secret=secret, idx=idx+1)
+print("They are the same word!")
+return True
