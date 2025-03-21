@@ -73,8 +73,13 @@ def bin_len(strings: list[str]) -> dict[int, set[str]]:
     # Initializes empty dictionary that will be returned
     for words in temp:
         word_list.add(f"{words}")
+        # Adds current word to set
         if temp[words] in binned_temp:
             word_list.update(binned_temp[temp[words]])
+            # Adds previous values to set if key already exists
         binned_temp[temp[words]] = word_list
+        # Reassign key-value pair
         word_list = set()
+        # Resets set to accomodate for new words and length
     return binned_temp
+    # Return dictionary with integers as keys and set of strings as values
