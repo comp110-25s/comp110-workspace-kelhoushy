@@ -19,9 +19,9 @@ def contains_char(word: str, character: str) -> bool:
 
 def emojified(guess: str, secret: str) -> str:
     """A function that displays colored boxes to indicate guess accuracy"""
-    white_box: str = "\U00002B1C"
-    green_box: str = "\U0001F7E9"
-    yellow_box: str = "\U0001F7E8"
+    white_box: str = "\U00002b1c"
+    green_box: str = "\U0001f7e9"
+    yellow_box: str = "\U0001f7e8"
     # Assigning variables for boxes for later.
     assert len(guess) == len(secret), "Guess must be same length as secret"
     index: int = 0

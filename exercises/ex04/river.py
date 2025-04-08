@@ -7,6 +7,8 @@ from exercises.ex04.bear import Bear
 
 
 class River:
+    """Create class for River"""
+
     day: int
     bear: list[Bear]
     fish: list[Fish]
@@ -23,6 +25,7 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+        """Checks ages for fish and bears"""
         if Fish.age > 3:
             self.fish.pop
         if Bear.age > 5:
@@ -30,12 +33,14 @@ class River:
         return None
 
     def bears_eating(self):
+        """Facilitate removal of fish and hunger_score of bears"""
         if len(self.fish) > 4:
             self.remove_fish(3)
             Bear.eat(3)
         return None
 
     def check_hunger(self):
+        """Check bear hunger score"""
         alive_bears: list[Bear] = self.bears
         if Bear.hunger_score() < 0:
             alive_bears.remove
@@ -43,6 +48,7 @@ class River:
         return None
 
     def repopulate_fish(self):
+        """Bring new fish into population"""
         i: int = 0
         while i < len(self.fish) // 2:
             idx: int = 0
@@ -53,6 +59,7 @@ class River:
         return None
 
     def repopulate_bears(self):
+        """Bring new bears into population"""
         i: int = 0
         while i < len(self.bears) // 2:
             self.bears.append(Bear())
@@ -60,11 +67,13 @@ class River:
         return None
 
     def view_river(self):
+        """Display population data of river"""
         return f"(~~~ Day {self.day}: ~~~ \
             Fish population: {self.fish} \
             Bear population: {self.bears})"
 
     def remove_fish(self, amount: int):
+        """Function to remove fish"""
         alive_fish: list[Fish] = self.fish
         while amount > 0:
             alive_fish.remove
